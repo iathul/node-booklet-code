@@ -30,10 +30,10 @@ ig.use({
 // SET THE ROUTES
 // ===================================================
 // home page route - popular images
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
 
     // use the instagram package to get popular media
-    ig.user_self_media_recent(function(err, medias, pagination, remaining, limit) {
+    ig.user_self_media_recent((err, medias, pagination, remaining, limit) => {
         // render the home page and pass in the popular images
 
         res.render('pages/index', { grams: medias });
